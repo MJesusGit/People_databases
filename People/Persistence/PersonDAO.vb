@@ -1,4 +1,5 @@
-﻿Public Class PersonDAO
+﻿
+Public Class PersonDAO
 
     Public ReadOnly Property Persons As Collection
 

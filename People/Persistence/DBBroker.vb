@@ -4,7 +4,7 @@
     Private Shared connection As OleDb.OleDbConnection
     Private Shared connectionString As String
 
-    Private Sub New()
+    Private Sub New() 'si tengo un condtructor publico en singleton MAL
         DBBroker.connection = New OleDb.OleDbConnection(DBBroker.connectionString)
     End Sub
 
@@ -16,20 +16,20 @@
     End Function
 
     Public Shared Function GetBroker(path As String) As DBBroker
-        DBBroker.connectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=" & path
-        DBBroker.connection = New OleDb.OleDbConnection(DBBroker.connectionString)
+        DBBroker.connectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=" & path 'mirar esto el path es la ruta del archivo
+        DBBroker.connection = New OleDb.OleDbConnection(DBBroker.connectionString) 'devulve DBBroker
         Return DBBroker.GetBroker
     End Function
 
     Public Function Read(sql As String) As Collection
-        Dim result As New Collection
+        Dim result As New Collection 'collection of colection 
         Dim row As Collection
         Dim i As Integer
         Dim reader As OleDb.OleDbDataReader
         Dim com As New OleDb.OleDbCommand(sql, DBBroker.connection)
         Connect()
         reader = com.ExecuteReader
-        While reader.Read
+        While reader.Read 'si tengo algo que leer haz:
             row = New Collection
             For i = 0 To reader.FieldCount - 1
                 row.Add(reader(i).ToString)
