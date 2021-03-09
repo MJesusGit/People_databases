@@ -22,13 +22,13 @@
     End Sub
 
     'Como hacer los botones de Cerrar aplicacion y minimizar la ventana
-    Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
-        Application.Exit()
-    End Sub
+    'Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
+    'Application.Exit()
+    'End Sub
 
-    Private Sub btnMinimize_Click(sender As Object, e As EventArgs) Handles btnMinimize.Click
-        Me.WindowState = FormWindowState.Minimized
-    End Sub
+    'Private Sub btnMinimize_Click(sender As Object, e As EventArgs) Handles btnMinimize.Click
+    ' Me.WindowState = FormWindowState.Minimized
+    'End Sub
 
     'Como hacer todo lo demás
     Private Sub frmPersons_Load(sender As Object, e As EventArgs) Handles MyBase.Load
