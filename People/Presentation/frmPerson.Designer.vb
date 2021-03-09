@@ -23,7 +23,7 @@ Partial Class frmPersons
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.ofdPath = New System.Windows.Forms.OpenFileDialog()
-        Me.lstPersons = New System.Windows.Forms.ListBox()
+        Me.lstPeople = New System.Windows.Forms.ListBox()
         Me.txtID = New System.Windows.Forms.TextBox()
         Me.txtName = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -40,17 +40,17 @@ Partial Class frmPersons
         '
         Me.ofdPath.FileName = "OpenFileDialog1"
         '
-        'lstPersons
+        'lstPeople
         '
-        Me.lstPersons.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lstPersons.ForeColor = System.Drawing.Color.Brown
-        Me.lstPersons.FormattingEnabled = True
-        Me.lstPersons.ItemHeight = 18
-        Me.lstPersons.Location = New System.Drawing.Point(62, 61)
-        Me.lstPersons.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
-        Me.lstPersons.Name = "lstPersons"
-        Me.lstPersons.Size = New System.Drawing.Size(339, 328)
-        Me.lstPersons.TabIndex = 1
+        Me.lstPeople.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lstPeople.ForeColor = System.Drawing.Color.Brown
+        Me.lstPeople.FormattingEnabled = True
+        Me.lstPeople.ItemHeight = 18
+        Me.lstPeople.Location = New System.Drawing.Point(62, 61)
+        Me.lstPeople.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
+        Me.lstPeople.Name = "lstPeople"
+        Me.lstPeople.Size = New System.Drawing.Size(339, 328)
+        Me.lstPeople.TabIndex = 1
         '
         'txtID
         '
@@ -208,7 +208,7 @@ Partial Class frmPersons
         Me.Controls.Add(Me.btnAdd)
         Me.Controls.Add(Me.txtName)
         Me.Controls.Add(Me.txtID)
-        Me.Controls.Add(Me.lstPersons)
+        Me.Controls.Add(Me.lstPeople)
         Me.Controls.Add(Me.btnOpenDB)
         Me.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
@@ -224,7 +224,7 @@ Partial Class frmPersons
 
     Friend WithEvents btnOpenDB As Button
     Friend WithEvents ofdPath As OpenFileDialog
-    Friend WithEvents lstPersons As ListBox
+    Friend WithEvents lstPeople As ListBox
     Friend WithEvents txtID As TextBox
     Friend WithEvents txtName As TextBox
     Friend WithEvents btnAdd As Button
