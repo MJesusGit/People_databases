@@ -125,5 +125,26 @@
     </None>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconoBorrar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agregar-simbolo-de-usuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\actualizar-signo-de-usuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\borrar-usuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\campo-de-texto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bases-de-datos-conectadas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\busqueda-de-datos %281%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

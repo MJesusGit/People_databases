@@ -31,9 +31,7 @@
     'End Sub
 
     'Como hacer todo lo demás
-    Private Sub frmPersons_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.ofdPath.InitialDirectory = Application.StartupPath
-    End Sub
+
 
     'Select and Open the database
 
@@ -143,6 +141,8 @@
     Private Sub txtID_Click(sender As Object, e As EventArgs) Handles txtID.Click
         txtID.Clear()
     End Sub
+
+
 
     Private Sub txtName_Click(sender As Object, e As EventArgs) Handles txtName.Click
         txtName.Clear()
