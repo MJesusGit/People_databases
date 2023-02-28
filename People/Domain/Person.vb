@@ -13,10 +13,9 @@
         Me.PersonID = id
     End Sub
 
-    Public Sub ReadAllPersons(path As String)
-        Me.PerDAO.ReadAll(path)
+    Public Sub ReadAllPersons()
+        Me.PerDAO.ReadAll()
     End Sub
-
     Public Sub ReadPerson()
         Me.PerDAO.Read(Me)
     End Sub

@@ -1,11 +1,13 @@
-﻿Public Class DBBroker
+﻿
+Public Class DBBroker
 
     Private Shared _Instance As DBBroker
-    Private Shared connection As OleDb.OleDbConnection
+    Private Shared connection As MySql.Data.MySqlClient.MySqlConnection
     Private Shared connectionString As String
 
-    Private Sub New() 'si tengo un condtructor publico en singleton MAL
-        DBBroker.connection = New OleDb.OleDbConnection(DBBroker.connectionString)
+    Private Sub New()
+        'DBBroker.connectionString = "server=localhost;database=YOUR_DB_NAME;uid=root;pwd=YOUR_DB_PASSWORD"
+        DBBroker.connection = New MySql.Data.MySqlClient.MySqlConnection(DBBroker.connectionString)
     End Sub
 
     Public Shared Function GetBroker() As DBBroker
@@ -15,21 +17,15 @@
         Return DBBroker._Instance
     End Function
 
-    Public Shared Function GetBroker(path As String) As DBBroker
-        DBBroker.connectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=" & path 'mirar esto el path es la ruta del archivo
-        DBBroker.connection = New OleDb.OleDbConnection(DBBroker.connectionString) 'devulve DBBroker
-        Return DBBroker.GetBroker
-    End Function
-
     Public Function Read(sql As String) As Collection
-        Dim result As New Collection 'collection of colection 
+        Dim result As New Collection
         Dim row As Collection
         Dim i As Integer
-        Dim reader As OleDb.OleDbDataReader
-        Dim com As New OleDb.OleDbCommand(sql, DBBroker.connection)
+        Dim reader As MySql.Data.MySqlClient.MySqlDataReader
+        Dim com As New MySql.Data.MySqlClient.MySqlCommand(sql, DBBroker.connection)
         Connect()
         reader = com.ExecuteReader
-        While reader.Read 'si tengo algo que leer haz:
+        While reader.Read
             row = New Collection
             For i = 0 To reader.FieldCount - 1
                 row.Add(reader(i).ToString)
@@ -41,7 +37,7 @@
     End Function
 
     Public Function Change(sql As String) As Integer
-        Dim com As New OleDb.OleDbCommand(sql, DBBroker.connection)
+        Dim com As New MySql.Data.MySqlClient.MySqlCommand(sql, DBBroker.connection)
         Dim result As Integer
         Connect()
         result = com.ExecuteNonQuery
