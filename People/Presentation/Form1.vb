@@ -16,6 +16,8 @@
         btnOpenDB.Enabled = True
         btnAdd.Enabled = True
         btnClear.Enabled = True
+        btnUpdate.Enabled = True
+        btnDelete.Enabled = True
 
 
 
